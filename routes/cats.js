@@ -1,10 +1,12 @@
-//const { createCats } = require("express");
+
+const { application } = require("express");
 const express = require ("express");
 
-const {createCats}=require("../controllers/cats")
+const {createCats}=require("../controllers/cats");
 const catsRouter=express.Router();
 
-restaurantRouter.post("/",createResturants);
+// //post + http://localhost:5000/createCats
+catsRouter.post("/",createCats);
 
 
-module.exports=catsRouter;
+module.exports=catsRouter

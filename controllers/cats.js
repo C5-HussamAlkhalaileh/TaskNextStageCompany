@@ -2,9 +2,9 @@ const connection = require("../model/db");
 
 // create cats
 const createCats = (req, res) => {
-  const { name, addres } = req.body;
-  const query = "INSERT INTO rest_list (Name,Bread,Description) values (?,?,?)";
-  const data = [name, addres];
+  const { Name, Bread, Description } = req.body;
+  const query = "INSERT INTO CAT (Name,Bread,Description) values (?,?,?)";
+  const data = [Name, Bread, Description];
 
   connection.query(query, data, (err, result) => {
     if (err) {
@@ -22,4 +22,4 @@ const createCats = (req, res) => {
   });
 };
 
-module.exports = { createResturants};
+module.exports = { createCats };
